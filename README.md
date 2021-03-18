@@ -45,6 +45,12 @@ Add JavaFX dependencies if your JDK does not have JavaFX:
 Compile the project:
 
 ```
+mvn compile
+```
+
+Run the project:
+
+```
 mvn javafx:run
 ```
 
