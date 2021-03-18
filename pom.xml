@@ -57,7 +57,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.4</version>
                 <configuration>
-                    <mainClass>com.dynamsoft.BarcodeReader.App</mainClass>
+                    <mainClass>com.dynamsoft.BarcodeReader.Main</mainClass>
                 </configuration>
             </plugin>
         </plugins>
