@@ -19,7 +19,7 @@ java -jar BarcodeReaderFX.jar
 For other versions of JDK, you may have JavaFX installed first and run with this command (this may not work for some JDKs):
 
 ```
-java -jar .\BarcodeReaderFX.jar --module-path <path-to-javafx-home/lib> --add-modules javafx.controls,javafx.graphics,javafx.fxml
+java -jar BarcodeReaderFX.jar --module-path <path-to-javafx-home/lib> --add-modules javafx.controls,javafx.graphics,javafx.fxml
 ```
 
 ## Use Maven
@@ -34,7 +34,7 @@ mvn install
 
 Add JavaFX dependencies if your JDK does not have JavaFX:
 
-```
+```xml
 <dependency>
     <groupId>org.openjfx</groupId>
     <artifactId>javafx-controls</artifactId>
