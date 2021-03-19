@@ -1,5 +1,7 @@
 # A JavaFX Barcode Reader 
 
+![maven](https://github.com/Dynamsoft/desktop-java-barcode-reader/actions/workflows/maven.yml/badge.svg)
+
 It uses [Dynamsoft Barcode Reader](https://www.dynamsoft.com/barcode-reader/overview/) to read barcodes.
 
 It is possible to read barcodes from video stream with vlcj.
