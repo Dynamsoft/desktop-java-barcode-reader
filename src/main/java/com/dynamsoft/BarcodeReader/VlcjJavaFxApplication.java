@@ -7,11 +7,10 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import uk.co.caprica.vlcj.factory.MediaPlayerFactory;
+import uk.co.caprica.vlcj.player.base.MediaPlayer;
+import uk.co.caprica.vlcj.player.base.MediaPlayerEventAdapter;
 import uk.co.caprica.vlcj.player.embedded.EmbeddedMediaPlayer;
-
-
-import static uk.co.caprica.vlcj.javafx.videosurface.ImageViewVideoSurfaceFactory.videoSurfaceForImageView;
-
+import uk.co.caprica.vlcj.javafx.videosurface.ImageViewVideoSurface;
 /**
  *
  */
@@ -27,6 +26,23 @@ public class VlcjJavaFxApplication extends Application {
     public VlcjJavaFxApplication() {
         mediaPlayerFactory = new MediaPlayerFactory();
         embeddedMediaPlayer = mediaPlayerFactory.mediaPlayers().newEmbeddedMediaPlayer();
+        this.embeddedMediaPlayer.events().addMediaPlayerEventListener(new MediaPlayerEventAdapter() {
+            @Override
+            public void playing(MediaPlayer mediaPlayer) {
+            }
+
+            @Override
+            public void paused(MediaPlayer mediaPlayer) {
+            }
+
+            @Override
+            public void stopped(MediaPlayer mediaPlayer) {
+            }
+
+            @Override
+            public void timeChanged(MediaPlayer mediaPlayer, long newTime) {
+            }
+        });
     }
 
     @Override
@@ -34,7 +50,7 @@ public class VlcjJavaFxApplication extends Application {
     	stage=primaryStage;
         videoImageView = new ImageView();
         videoImageView.setPreserveRatio(true);
-        embeddedMediaPlayer.videoSurface().set(videoSurfaceForImageView(videoImageView));
+        embeddedMediaPlayer.videoSurface().set(new ImageViewVideoSurface(videoImageView));
         
         BorderPane root = new BorderPane();
         root.setStyle("-fx-background-color: black;");
