@@ -6,6 +6,8 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
+import java.net.URL;
+
 
 public class Main extends Application {
 	
@@ -23,7 +25,9 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		setPrimaryStage(primaryStage);
 		try {
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/dynamsoft/BarcodeReader/fxml/Main.fxml"));
+			URL url = getClass().getResource("/fxml/Main.fxml");
+			System.out.println(url);
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/Main.fxml"));
 			Parent root = fxmlLoader.load();
 			Scene scene = new Scene(root);
             primaryStage.setTitle("Barcode Reader");
